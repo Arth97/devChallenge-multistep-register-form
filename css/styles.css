@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@200;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 /* Reset some default styles */
 body, h1, h2, h3, p, ul, li {
@@ -15,33 +15,72 @@ a {
 	box-sizing: border-box;
 }
 
+/* Typography styles */
+body {
+	font-family: 'Inter', sans-serif !important;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+.tab-text {
+	font-size: 0.875rem;
+}
+
+.body-text {
+	font-size: 1rem;
+}
+
+.small-text, label {
+	font-size: 0.75rem;
+}
+
+.primary-button {
+	padding: 10px 30px;
+	border-radius: 25px;
+	background-color: #5425AF;
+}
+
 /* Add some styles for body*/
 body {
 	min-height: 100vh;
+	height: 100%;
 	max-width: 1280px;
-	margin: 0 auto;
-	background: #020617;
-	color: #cbd5e1;
-	font-family: 'Sora', sans-serif;
-	line-height: 1.5;
-	background-image: radial-gradient(#0f172a 1px,transparent 0),radial-gradient(#0f172a 1px,transparent 0);
-	background-position: 0 0,25px 25px;
-	background-attachment: fixed;
-	background-size: 50px 50px;
-	overflow-x: hidden;
-	padding: 4rem;
+	margin: 0 auto !important;
 	display: flex;
-	justify-content: space-between;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #121826;
+	background-image: url('blur-radial.jpg');
+	background-repeat: no-repeat;
+	background-position: 25% 25%;
+	background-size: cover;
 }
 
 main {
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	row-gap: 0.5rem;
 	column-gap: 1.5rem;
+}
+
+.step {
+	width: 475px;
+	height: 360px;
+	padding: 40px;
+	border-radius: 10px;
+	color: #E5E7EB;
+	background-color: #212936;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
 }
 
 

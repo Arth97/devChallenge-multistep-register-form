@@ -4,14 +4,44 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
 	<title>Multi-step Register Form - devchallenges.io</title>
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon" sizes="any">
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
 <body>
 	<main>
-		<form action="Submit" class="" id="multiStepForm"></form>
+		<form id="multiStepForm">
+			<div class="step" id="step1">
+					<h2>Register</h2>
+					<div class="flex flex-col">
+						<label for="name">Name</label>
+						<input type="text" id="name" placeholder="Enter your name" required>
+					</div>
+					<div class="flex flex-col">
+						<label for="email">Email</label>
+						<input type="email" id="email" placeholder="Example@gmail.com" required>
+					</div>
+					<button type="button" class="primary-button" onclick="nextStep(1)">Continue</button>
+			</div>
+			<div class="step" id="step2" style="display:none;">
+					<h2>Paso 2: Detalles de la Cuenta</h2>
+					<input type="password" placeholder="Contraseña" required>
+					<input type="password" placeholder="Confirmar Contraseña" required>
+					<button type="button" onclick="nextStep(2)">Siguiente</button>
+					<button type="button" onclick="prevStep(2)">Anterior</button>
+			</div>
+			<div class="step" id="step3" style="display:none;">
+					<h2>Paso 3: Confirmación</h2>
+					<p>Por favor, revisa tu información antes de enviar.</p>
+					<button type="submit">Enviar</button>
+					<button type="button" onclick="prevStep(3)">Anterior</button>
+			</div>
+	</form>
 	</main>
 
 	<script src="script.js"></script>
