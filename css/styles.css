@@ -73,16 +73,30 @@ main {
 
 .step {
 	width: 475px;
-	height: 360px;
+	height: 390px;
 	padding: 40px;
 	border-radius: 10px;
-	color: #E5E7EB;
+	color: #E5E7EB !important;
 	background-color: #212936;
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
 }
 
+input {
+	padding: 10px !important;
+	border-radius: 10px;
+	color: #E5E7EB !important;
+	border: 1px solid #4D5562;
+	background-color: #212936;
+}
+input::placeholder {
+	color: #E5E7EB !important;
+	opacity: 1;
+}
+input::-webkit-input-placeholder {
+	color: #E5E7EB !important;
+}
 
 @media screen and (min-width: 720px) {
 
