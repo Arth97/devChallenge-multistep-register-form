@@ -16,8 +16,9 @@
 <body>
 	<main>
 		<form id="multiStepForm">
-			<!-- <div class="step" id="step1"> -->
-			<div class="step" id="step1" style="display:none;">
+
+			<div class="step" id="step1">
+			<!-- <div class="step" id="step1" style="display:none;"> -->
 					<h2>Register</h2>
 					<div class="flex flex-col">
 						<label for="name">Name</label>
@@ -29,6 +30,7 @@
 					</div>
 					<button class="primary-button small-text" type="button" onclick="nextStep(1)">Continue</button>
 			</div>
+
 			<div class="step" id="step2" style="display:none;">
 			<!-- <div class="step" id="step2"> -->
 					<h2>Which topics you are interested in?</h2>
@@ -45,8 +47,9 @@
 					</div>
 					<button class="primary-button small-text" type="button" onclick="nextStep(2)">Continue</button>
 			</div>
-			<!-- <div class="step" id="step3" style="display:none;"> -->
-			<div class="step" id="step3">
+
+			<div class="step" id="step3" style="display:none;">
+			<!-- <div class="step" id="step3"> -->
 					<h2>Summary</h2>
 					<div class="summary-container">
 						<div class="summary-item">
@@ -65,8 +68,9 @@
 					</div>
 					<button class="primary-button small-text" type="submit">Confirm</button>
 			</div>
+
 			<div class="steps-description small-text">
-				Step ${step} of 3
+				<span id="step-text">Step 1 of 3</span>
 				<div class="flex flex-row gap-4">
 					<div class="step-dot"></div>
 					<div class="step-dot"></div>

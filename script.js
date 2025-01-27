@@ -1,38 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
-	const topicButtons = document.querySelectorAll('.topic-option');
-	const form = document.getElementById('multiStepForm');
+	const steps = Array.from(document.querySelectorAll('.step'));
+	const dots = Array.from(document.querySelectorAll('.step-dot'));
+	const stepText = document.getElementById('step-text');
+	
+	dots[0].style.backgroundColor = '#5425AF';
+	dots[0].style.boxShadow = '0 0 10px #845EEE';
+	stepText.textContent = 'Step 1 of 3';
 
-	topicButtons.forEach(button => {
-		button.addEventListener('click', function () {
-			this.classList.toggle('selected');
+	function nextStep(step) {
+		const nextStep = step + 1;
+
+		steps.forEach((s, index) => {
+			s.style.display = index + 1 === nextStep ? 'flex' : 'none';
 		});
-	});
+		
+		dots.forEach((dot, index) => {
+			dot.style.backgroundColor = index + 1 === nextStep ? '#5425AF' : '#212936';
+			dot.style.boxShadow = index + 1 === nextStep ? '0 0 10px #845EEE' : 'none';
+		});
 
-	function updateSummary() {
-
-		document.getElementById('summary-name').textContent = document.getElementById('name').value || '-';
-		document.getElementById('summary-email').textContent = document.getElementById('email').value || '-';
-
-
-		const topicsContainer = document.getElementById('summary-topics');
-		topicsContainer.innerHTML = '';
-
-		const selectedTopics = document.querySelectorAll('.topic-option.selected');
-		if (selectedTopics.length === 0) {
-			topicsContainer.innerHTML = '<span class="summary-value">No topics selected</span>';
-		} else {
-			selectedTopics.forEach(topic => {
-				const topicTag = document.createElement('span');
-				topicTag.className = 'topic-tag';
-				topicTag.textContent = topic.querySelector('span').textContent;
-				topicsContainer.appendChild(topicTag);
-			});
-		}
+		stepText.textContent = `Step ${nextStep} of 3`;
 	}
 
-	window.nextStep = function (step) {
-		if (step === 2) {
-			updateSummary();
-		}
-	}
-}); 
+	window.nextStep = nextStep;
+});
