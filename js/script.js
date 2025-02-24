@@ -22,5 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
 		stepText.textContent = `Step ${nextStep} of 3`;
 	}
 
+	const topicButtons = document.querySelectorAll('.topic-option');
+    topicButtons.forEach(button => {
+			button.addEventListener('click', function() {
+				this.classList.add('selected');
+			});
+    });
+
 	window.nextStep = nextStep;
 });
