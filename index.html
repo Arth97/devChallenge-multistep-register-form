@@ -17,8 +17,8 @@
 	<main>
 		<form id="multiStepForm">
 
-			<div class="step" id="step1">
-			<!-- <div class="step" id="step1" style="display:none;"> -->
+			<div class="wrapper">
+				<div class="step step1" id="step1">
 					<h2>Register</h2>
 					<div class="flex flex-col">
 						<label for="name">Name</label>
@@ -29,10 +29,9 @@
 						<input class="small-text" type="email" id="email" placeholder="Example@gmail.com" required>
 					</div>
 					<button class="primary-button small-text" type="submit">Continue</button>
-			</div>
+				</div>
 
-			<div class="step" id="step2" style="display:none;">
-			<!-- <div class="step" id="step2"> -->
+				<div class="step step2" id="step2" style="display:none;">
 					<h2>Which topics you are interested in?</h2>
 					<div class="flex flex-col gap-4">
 						<button type="button" class="topic-option" data-topic="software">
@@ -46,10 +45,9 @@
 						</button>
 					</div>
 					<button class="primary-button small-text" type="button" onclick="nextStep(2)">Continue</button>
-			</div>
+				</div>
 
-			<div class="step" id="step3" style="display:none;">
-			<!-- <div class="step" id="step3"> -->
+				<div class="step step3" id="step3" style="display:none;">
 					<h2>Summary</h2>
 					<div class="summary-container">
 						<div class="summary-item">
@@ -67,6 +65,7 @@
 						</div>
 					</div>
 					<button class="primary-button small-text" type="submit">Confirm</button>
+				</div>
 			</div>
 
 			<div class="steps-description small-text">

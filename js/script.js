@@ -42,6 +42,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			document.getElementById('summary-name').textContent = formData.name;
 			document.getElementById('summary-email').textContent = formData.email;
+		} else if (step === 2) {
+			if (formData.topics.length === 0) {
+				alert('Select at least one topic');
+				return;
+			}
 		}
 
 		currentStep+=1;
@@ -66,8 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
 				this.classList.add('selected');
 				formData.topics.push(topic);
 			}
-
-			// Actualizar el resumen de topics
 			updateTopicsSummary();
 		});
 	});
