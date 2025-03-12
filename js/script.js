@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (form.checkValidity()) {				
 				nextStep(1);
 			}
+		} else if (currentStep === 3) {
+			alert('✅ Success');
 		}
 	});
 
@@ -47,6 +49,24 @@ document.addEventListener('DOMContentLoaded', function () {
 				alert('Select at least one topic');
 				return;
 			}
+
+			const topicsContainer = document.getElementById('summary-topics');
+			topicsContainer.innerHTML = '';
+
+			const ul = document.createElement('ul');
+			ul.className = 'topic-list';
+
+			formData.topics.forEach(topic => {
+					const li = document.createElement('li');
+					const topicText = {
+							'software': 'Software Development',
+							'ux': 'User Experience',
+							'design': 'Graphic Design'
+					}[topic] || topic;
+					li.textContent = topicText;
+					ul.appendChild(li);
+			});		
+			topicsContainer.appendChild(ul);
 		}
 
 		currentStep+=1;

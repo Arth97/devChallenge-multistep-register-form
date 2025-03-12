@@ -48,6 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: 25px;
 	background-color: #5425AF;
 	align-self: center;
+	background: linear-gradient(180deg, #845eee 0%, #652cd1 100%);
 }
 
 /* Add some styles for body*/
@@ -146,13 +147,7 @@ input::-webkit-input-placeholder {
 .summary-container {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
-}
-
-.summary-item {
-	display: flex;
-	flex-direction: row;
-	gap: 8px;
+	gap: 15px;
 }
 
 .summary-topics {
@@ -161,13 +156,14 @@ input::-webkit-input-placeholder {
 	gap: 8px;
 }
 
-.topic-tag {
-	background-color: rgba(84, 37, 175, 0.1);
-	border: 1px solid #5425AF;
+.topic-list {
+	list-style-type: disc;
+	padding-left: 20px;
 	color: #E5E7EB;
-	padding: 4px 12px;
-	border-radius: 16px;
-	font-size: 0.75rem;
+}
+
+.topic-list li {
+	font-size: 0.875rem;
 }
 
 .steps-description {
